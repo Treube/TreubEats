@@ -18,3 +18,8 @@ model User {
   email String @unique
   name String?
 }
+
+model Meals { 
+  id Int @id @default(autoincrement) 
+
+}
