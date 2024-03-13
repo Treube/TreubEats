@@ -16,6 +16,7 @@ datasource db {
 model User {
   id     Int      @id @default(autoincrement())
   email  String   @unique
+  username String?
   name   String?
   Order  Order[]
   Review Review[]
