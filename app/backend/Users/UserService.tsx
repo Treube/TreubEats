@@ -5,7 +5,6 @@ export async function createUser( email: string, username: string, password:stri
     /**
      * ensure password is within some criteria
      */
-
     //Create the user using prisma client
     const newUser= await prisma.user.create({
         data: {
@@ -14,7 +13,7 @@ export async function createUser( email: string, username: string, password:stri
             },
         }
     );
-    console.log(newUser);
-    
-}
+   // console.log(newUser);
+    return newUser;
+};
 
