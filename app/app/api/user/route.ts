@@ -1,5 +1,5 @@
 
-import * as userController from '../../backend/Users/UserController'
+import * as userController from '../../../backend/Users/UserController'
 import { NextRequest, NextResponse } from 'next/server';
 
 //function handles the user API routes
