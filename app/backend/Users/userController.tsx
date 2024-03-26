@@ -9,14 +9,15 @@ export const createUser = async(req: NextRequest , res: NextResponse) => {
     //ensure that body has a username and password
     //retrieve user name and password from req
     const data  = await req.json();
-    const {username,password,email} = data
+    console.log("I GOT HERE HELPPPP!!!");
+    const {username,password,email} = data;
 
     if (!username || !password || !email) {
-       return NextResponse.error()
+       console.log("I GOT AN ERROR HELPPPP!!!");
+       return NextResponse.error();
     }
-    const newUser = await userService.createUser(email,username,password)
-
+    const newUser = await userService.createUser(email,username,password);
     // Respond with the created user
-    
+    return newUser;
 
 };

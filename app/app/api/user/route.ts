@@ -7,9 +7,9 @@ export async function POST (
     req: NextRequest,
     res: NextResponse ) {
         //check the body to make sure
-        
+        userController.createUser(req,res);
         console.log("we are here!!!!!");
-        return NextResponse.json({message: "we are here!!!!"})
+        return NextResponse.json({message: "we are here!!!!"});
 
 }
 
@@ -18,6 +18,6 @@ export async function GET (
     context: any) {
         //check the body to make sure
         console.log("we are here!!!!!");
-        return NextResponse.json({message: "we are here!!!!"})
+        return NextResponse.json({message: "we are here!!!!"});
 
 }
