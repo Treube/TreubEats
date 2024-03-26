@@ -7,7 +7,7 @@ export async function POST (
     req: NextRequest,
     res: NextResponse ) {
         //check the body to make sure
-        userController.createUser(req,res);
+        userController.createUser(req ,res);
         console.log("we are here!!!!!");
         return NextResponse.json({message: "we are here!!!!"});
 
