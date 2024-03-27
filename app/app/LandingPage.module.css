@@ -1,0 +1,36 @@
+
+.banner {
+    display: flex;
+    flex-direction: column;
+    background: white;
+    color: black;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+
+.bannerBar{
+    border: 5;
+    border-radius: 2px;
+    width: 80%;               
+    background-color: black;   
+    height: 5px;
+
+}
+
+.menuLinks{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 80%;
+    margin-top: 15px;
+    font-weight: bold;
+    
+}
+
+.logo{
+    position: absolute;
+    top: 20px;
+    right: 40px;
+}
