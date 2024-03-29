@@ -3,6 +3,7 @@
     "prisma": "^5.10.2"
   },
   "dependencies": {
+    "@clerk/clerk-js": "^4.70.6",
     "@prisma/client": "^5.11.0"
   }
 }

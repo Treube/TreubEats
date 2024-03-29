@@ -10,7 +10,7 @@ import {
 } from "@/components/ui/dialog"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
-import { authenticate } from '../../lib/actions'
+
 
 export function LoginButton() {
   return (
@@ -25,7 +25,7 @@ export function LoginButton() {
             Enter your username and password
           </DialogDescription>
         </DialogHeader>
-        <form  action = {authenticate}>
+        <form >
         <div className="grid gap-4 py-4">
           
           <div className="grid grid-cols-4 items-center gap-4">
