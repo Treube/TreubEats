@@ -4,6 +4,7 @@
   },
   "dependencies": {
     "@clerk/clerk-js": "^4.70.6",
-    "@prisma/client": "^5.11.0"
+    "@prisma/client": "^5.11.0",
+    "clerk": "^0.8.3"
   }
 }

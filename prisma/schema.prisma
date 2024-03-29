@@ -12,8 +12,7 @@ model User {
   email    String   @unique
   name     String?
   username String?
-  Order    Order[]
-  Review   Review[]
+
 }
 
 model MenuSection {
@@ -36,7 +35,7 @@ model Order {
   id        Int         @id @default(autoincrement())
   createdAt DateTime    @default(now())
   userId    Int
-  user      User        @relation(fields: [userId], references: [id])
+
   items     OrderItem[]
 }
 
@@ -54,5 +53,5 @@ model Review {
   text   String
   rating Int
   userId Int
-  user   User   @relation(fields: [userId], references: [id])
+ 
 }
