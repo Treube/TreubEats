@@ -10,7 +10,7 @@ import {
 } from "@/components/ui/dialog"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
-
+import { SignIn } from "@clerk/nextjs";
 
 export function LoginButton() {
   return (
@@ -19,7 +19,7 @@ export function LoginButton() {
         <Button >Login</Button>
       </DialogTrigger>
       <DialogContent className="sm:max-w-[425px]">
-        <DialogHeader>
+        {/* <DialogHeader>
           <DialogTitle>Login</DialogTitle>
           <DialogDescription>
             Enter your username and password
@@ -44,7 +44,9 @@ export function LoginButton() {
         <DialogFooter>
           <Button type="submit">Login</Button>
         </DialogFooter>
-        </form>
+        </form> */}
+        
+        <SignIn />
       </DialogContent>
     </Dialog>
   )

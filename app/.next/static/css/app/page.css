@@ -1,0 +1,41 @@
+/*!**********************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[11].oneOf[7].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[11].oneOf[7].use[3]!./app/LandingPage.module.css ***!
+  \**********************************************************************************************************************************************************************************************************************************************************************/
+
+.LandingPage_banner__YbK81 {
+    display: flex;
+    flex-direction: column;
+    background: white;
+    color: black;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+
+.LandingPage_bannerBar__feGpa{
+    border: 5;
+    border-radius: 2px;
+    width: 80%;               
+    background-color: black;   
+    height: 4px;
+
+}
+
+.LandingPage_menuLinks__RPDkr{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 80%;
+    margin-top: 15px;
+    font-weight: bold;
+    
+}
+
+.LandingPage_logo__6ueLX{
+    position: absolute;
+    top: 20px;
+    right: 40px;
+}
+
+
