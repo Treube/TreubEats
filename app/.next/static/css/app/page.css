@@ -33,9 +33,17 @@
 }
 
 .LandingPage_logo__6ueLX{
+    width: 13%;
     position: absolute;
     top: 20px;
-    right: 40px;
+    right: 30px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.LandingPage_cookingVid__JJuVV{
+    height: 540px;
 }
 
 

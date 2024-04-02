@@ -30,8 +30,16 @@
 }
 
 .logo{
+    width: 13%;
     position: absolute;
     top: 20px;
-    right: 40px;
+    right: 30px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.cookingVid{
+    height: 540px;
 }
 
