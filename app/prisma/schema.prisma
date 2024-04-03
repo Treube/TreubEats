@@ -1,0 +1,58 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:./dev.db"
+}
+
+model User {
+  id       Int      @id @default(autoincrement())
+  email    String   @unique
+  name     String?
+  username String?
+  Order    Order[]
+  Review   Review[]
+}
+
+model MenuSection {
+  id       Int        @id @default(autoincrement())
+  name     String
+  MenuItem MenuItem[]
+}
+
+model MenuItem {
+  id          Int         @id @default(autoincrement())
+  name        String
+  description String?
+  price       Float
+  sectionId   Int
+  section     MenuSection @relation(fields: [sectionId], references: [id])
+  OrderItem   OrderItem[]
+}
+
+model Order {
+  id        Int         @id @default(autoincrement())
+  createdAt DateTime    @default(now())
+  userId    Int
+  user      User        @relation(fields: [userId], references: [id])
+  items     OrderItem[]
+}
+
+model OrderItem {
+  id         Int      @id @default(autoincrement())
+  quantity   Int
+  menuItemId Int
+  orderId    Int
+  order      Order    @relation(fields: [orderId], references: [id])
+  menuItem   MenuItem @relation(fields: [menuItemId], references: [id])
+}
+
+model Review {
+  id     Int    @id @default(autoincrement())
+  text   String
+  rating Int
+  userId Int
+  user   User   @relation(fields: [userId], references: [id])
+}
