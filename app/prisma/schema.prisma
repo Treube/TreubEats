@@ -19,10 +19,10 @@ model User {
 model MenuSection {
   id       Int        @id @default(autoincrement())
   name     String
-  MenuItem MenuItem[]
+  meals Meal[]
 }
 
-model MenuItem {
+model Meal {
   id          Int         @id @default(autoincrement())
   name        String
   description String?
@@ -43,10 +43,10 @@ model Order {
 model OrderItem {
   id         Int      @id @default(autoincrement())
   quantity   Int
-  menuItemId Int
+  mealId Int
   orderId    Int
   order      Order    @relation(fields: [orderId], references: [id])
-  menuItem   MenuItem @relation(fields: [menuItemId], references: [id])
+  meal  Meal @relation(fields: [mealId], references: [id])
 }
 
 model Review {
