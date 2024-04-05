@@ -33,7 +33,9 @@ export default function LandingPage() {
       </div>
 
       <div className = {styles.cookingVid}>
-      <Image src= "/stir_fry_food.webp" width={0} height={0} sizes="100vw" style={{ width: '100%', height: '100%' }} alt = "CookingVid"></Image>
+      <video loop autoPlay muted width = '100%' height = '100%'>
+                            <source src={('/food.mp4')}/>
+                        </video>
       </div>
       </div>
 
