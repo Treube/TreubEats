@@ -1,0 +1,23 @@
+import prisma from '../Prisma'
+import * as userService from './mealService' ;
+
+export async function createMeal( name: string, price: number): Promise<any>{
+    //have some requirements about user name and password 
+    /**
+     * ensure password is within some criteria
+     */
+    //Create the user using prisma client
+    console.log("I am about to print new neal");
+    const newMeal= await prisma.meal.create({
+        data: {
+            name:name,
+            price: price,
+            sectionId : 2,
+            },
+        }
+    );
+    console.log("I am about to print new neal");
+    console.log(newMeal);
+    return newMeal;
+};
+

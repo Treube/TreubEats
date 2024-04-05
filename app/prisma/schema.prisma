@@ -19,7 +19,6 @@ model User {
 model MenuSection {
   id       Int        @id @default(autoincrement())
   name     String
-  meals Meal[]
 }
 
 model Meal {
@@ -27,8 +26,6 @@ model Meal {
   name        String
   description String?
   price       Float
-  sectionId   Int
-  section     MenuSection @relation(fields: [sectionId], references: [id])
   OrderItem   OrderItem[]
 }
 
