@@ -11,8 +11,8 @@ export async function createMeal( name: string, price: number): Promise<any>{
     const newMeal= await prisma.meal.create({
         data: {
             name:name,
+            description: "this is an amazing meal",
             price: price,
-            sectionId : 2,
             },
         }
     );
