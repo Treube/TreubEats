@@ -34,7 +34,7 @@ export const updateMenuSection = async(req: NextApiRequest , res: NextApiRespons
 
 };
 
-export const deleteReview = async(req: NextApiRequest , res: NextApiResponse) => {
+export const deleteMenuSection = async(req: NextApiRequest , res: NextApiResponse) => {
   // ensure that body has a userid and sectionid
   // retrieve userid and sectionid from req
   const {userId, sectionId} = req.body
@@ -43,9 +43,9 @@ export const deleteReview = async(req: NextApiRequest , res: NextApiResponse) =>
     return res.status(400).json({ message: 'There are missing entries are required' });
   }
 
-  const deletedReview = await menuSectionService.deleteMenuSection(userId, sectionId)
+  const deletedMenuSection = await menuSectionService.deleteMenuSection(userId, sectionId)
 
   // respond with the deleted menu section
-  res.status(201).json(deletedReview);
+  res.status(201).json(deletedMenuSection);
 
 };
