@@ -43,7 +43,50 @@
 }
 
 .LandingPage_cookingVid__JJuVV{
-    height: 540px;
+    height: auto;
+}
+
+.LandingPage_menuSection__RQxIQ{
+    display: flex;
+    flex-direction: column;
 }
 
 
+/*!*************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[11].oneOf[7].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[11].oneOf[7].use[3]!./app/components/styles/MenuItem.module.css ***!
+  \*************************************************************************************************************************************************************************************************************************************************************************************/
+.MenuItem_menuRow__5cGP9{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    color: white;
+    
+}
+.MenuItem_menuDesc__Z0jyj{
+    width: 50%;
+    margin-top: 75px;
+}
+
+.MenuItem_descBar__Z6vxm{
+
+    border: 5;
+    border-radius: 2px;
+    width: 100%;               
+    background-color: white; 
+    height: 4px;
+
+}
+
+.MenuItem_descStyle__Z1a2_{
+
+}
+
+.MenuItem_descPrice__cyogh{
+    
+}
+
+.MenuItem_menuImage__eAiso{
+    margin: auto;
+    display: block;
+}

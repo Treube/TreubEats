@@ -40,6 +40,11 @@
 }
 
 .cookingVid{
-    height: 540px;
+    height: auto;
+}
+
+.menuSection{
+    display: flex;
+    flex-direction: column;
 }
 

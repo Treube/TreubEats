@@ -434,6 +434,8 @@ video {
   background-color: hsl(var(--background));
   color: hsl(var(--foreground));
     background-color: orange;
+
+    scroll-behavior: smooth !important;
 }
 
 *, ::before, ::after {
@@ -602,6 +604,12 @@ video {
 .h-9 {
   height: 2.25rem;
 }
+.h-6 {
+  height: 1.5rem;
+}
+.h-40 {
+  height: 10rem;
+}
 .w-10 {
   width: 2.5rem;
 }
@@ -659,8 +667,14 @@ video {
 .rounded-sm {
   border-radius: calc(var(--radius) - 4px);
 }
+.rounded-xl {
+  border-radius: 0.75rem;
+}
 .border {
   border-width: 1px;
+}
+.border-dotted {
+  border-style: dotted;
 }
 .border-input {
   border-color: hsl(var(--input));
@@ -717,6 +731,18 @@ video {
   font-size: 0.875rem;
   line-height: 1.25rem;
 }
+.text-5xl {
+  font-size: 3rem;
+  line-height: 1;
+}
+.text-xl {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+}
+.text-8xl {
+  font-size: 6rem;
+  line-height: 1;
+}
 .font-medium {
   font-weight: 500;
 }
@@ -743,6 +769,10 @@ video {
 }
 .text-secondary-foreground {
   color: hsl(var(--secondary-foreground));
+}
+.text-white {
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 .underline-offset-4 {
   text-underline-offset: 4px;

@@ -4,8 +4,14 @@ import styles from "./LandingPage.module.css";
 import {LoginButton} from "./components/LogIn";
 import { SignInButton, SignUpButton } from "@clerk/nextjs";
 import { Button } from "@/components/ui/button";
+import prisma from "@/backend/Prisma";
+import MenuItem from "./components/MenuItem";
 
-export default function LandingPage() {
+
+
+export  default async function LandingPage() {
+  const MenuItems = await prisma.menuItem.findMany();
+  const MenuSize = MenuItems.length 
   return (
     <div>
     <div className = {styles.banner}>
@@ -24,7 +30,7 @@ export default function LandingPage() {
       <hr className = {styles.bannerBar}></hr>
         <div className = {styles.menuLinks}>
           
-          <a href = "/">Menu</a>
+          <a href = "#menu">Menu</a>
           <a href = "/">Order</a>
           <a href = "/">About</a>
           <a href = "/">Review</a>
@@ -33,10 +39,16 @@ export default function LandingPage() {
       </div>
 
       <div className = {styles.cookingVid}>
-      <video loop autoPlay muted width = '100%' height = '100%'>
+      <video loop autoPlay muted width = '100%'>
                             <source src={('/food.mp4')}/>
                         </video>
       </div>
+
+      <div id = "menu" className = {styles.menuSection}> 
+        <h1 className = 'text-white text-center text-8xl'>MENU</h1>
+        <MenuItem  />
+      </div>
+
       </div>
 
   );

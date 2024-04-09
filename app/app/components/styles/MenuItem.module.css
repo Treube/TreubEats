@@ -1,0 +1,35 @@
+.menuRow{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    color: white;
+    
+}
+.menuDesc{
+    width: 50%;
+    margin-top: 75px;
+}
+
+.descBar{
+
+    border: 5;
+    border-radius: 2px;
+    width: 100%;               
+    background-color: white; 
+    height: 4px;
+
+}
+
+.descStyle{
+
+}
+
+.descPrice{
+    
+}
+
+.menuImage{
+    margin: auto;
+    display: block;
+}
