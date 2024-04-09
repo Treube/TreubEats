@@ -45,7 +45,7 @@ export  default async function LandingPage() {
       </div>
 
       <div id = "menu" className = {styles.menuSection}> 
-        <h1 className = 'text-white text-center text-8xl'>MENU</h1>
+        <h1 className = 'text-white text-center text-8xl mt-10'>MENU</h1>
         <MenuItem  />
       </div>
 

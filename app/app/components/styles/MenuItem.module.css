@@ -22,11 +22,12 @@
 }
 
 .descStyle{
-
+    margin-top:10px;
 }
 
 .descPrice{
-    
+    margin-top: 10px;
+    text-align: center;
 }
 
 .menuImage{
