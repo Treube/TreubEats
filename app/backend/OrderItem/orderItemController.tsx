@@ -1,21 +1,23 @@
 import { log } from 'console';
 import { NextRequest, NextResponse } from 'next/server';
-import * as MealService from './mealService' ;
+import * as MealService from './orderItemService' ;
 
-export const createMeal= async(req: NextRequest , res: NextResponse) => {
+export const createOrderItem= async(req: NextRequest , res: NextResponse) => {
     // ensure that body has a name and items
     // retrieve name and items from req
     const request_data = await req.formData();
-    const name = request_data.get("name") as string;
-    const price = parseFloat(request_data.get("price") as string);
+    const mealId = Number(request_data.get("mealId") as string);
+    const orderId = Number(request_data.get("orderId") as string);
+    const quantity = parseFloat(request_data.get("quantity") as string);
   
 
-    if (!name || !price ) {
-         console.log(name,price);
+    if (!mealId || !orderId || quantity ) {
+         console.log("AHH I AM MISSING ONEE!!!");
          return NextResponse.error();
       }
       console.log("IN controller");
-    const newMenuItem = await MealService.createMeal(name, price)
+    const newMenuItem = await MealService.createOrderItem(mealId, orderId, quantity);
+    
     return newMenuItem;
     // respond with the created review
     
