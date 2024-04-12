@@ -12,13 +12,12 @@ model User {
   email    String   @unique
   name     String?
   username String?
-  Order    Order[]
   Review   Review[]
 }
 
 model MenuSection {
-  id       Int        @id @default(autoincrement())
-  name     String
+  id   Int    @id @default(autoincrement())
+  name String
 }
 
 model Meal {
@@ -37,12 +36,12 @@ model Order {
 }
 
 model OrderItem {
-  id         Int      @id @default(autoincrement())
-  quantity   Int
-  mealId     Int
-  orderId    Int
-  order      Order    @relation(fields: [orderId], references: [id])
-  meal  Meal @relation(fields: [mealId], references: [id])
+  id       Int   @id @default(autoincrement())
+  quantity Int
+  mealId   Int
+  orderId  Int
+  meal     Meal  @relation(fields: [mealId], references: [id])
+  order    Order @relation(fields: [orderId], references: [id])
 }
 
 model Review {
