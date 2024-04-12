@@ -32,15 +32,14 @@ model Meal {
 model Order {
   id        Int         @id @default(autoincrement())
   createdAt DateTime    @default(now())
-  userId    Int
-  user      User        @relation(fields: [userId], references: [id])
+  userId    String
   items     OrderItem[]
 }
 
 model OrderItem {
   id         Int      @id @default(autoincrement())
   quantity   Int
-  mealId Int
+  mealId     Int
   orderId    Int
   order      Order    @relation(fields: [orderId], references: [id])
   meal  Meal @relation(fields: [mealId], references: [id])
