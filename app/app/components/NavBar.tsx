@@ -6,12 +6,12 @@ import { UserButton } from "@clerk/nextjs";
 
 export default function Navigation() {
   return (
-    <Navbar>
+    <Navbar position = "sticky">
       <NavbarBrand>
       <Image src= "/TreubeLogo.png" width = {90} height = {90} className="logo" alt = "TreubeLogo"></Image>
         <p className="font-bold text-inherit">TreubeEats</p>
       </NavbarBrand>
-      <NavbarContent className="hidden sm:flex gap-4" justify="start">
+      <NavbarContent justify="center">
         <NavbarItem>
           <Link color="foreground" href="#">
             Features
@@ -28,7 +28,7 @@ export default function Navigation() {
           </Link>
         </NavbarItem>
       </NavbarContent>
-      <NavbarContent justify="start">
+      <NavbarContent justify="end">
         <NavbarItem className="hidden lg:flex">
           <Link href="#">Login</Link>
         </NavbarItem>

@@ -1,18 +1,14 @@
 .menuRow{
     display: flex;
     flex-direction: row;
-
     width: 100%;
-    
-
-    
-    
 }
 .menuDesc{
     width: 50%;
-    margin-top: 75px;
     background-color: white;
     color: orange;
+    height: 400px;
+    
     
 }
 
@@ -43,7 +39,7 @@
 }
 
 .menuImage{
-    margin: auto;
-    display: block;
-    background-color: white;
+
+    height: 400px;
+    width: 50%;
 }

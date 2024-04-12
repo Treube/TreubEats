@@ -18,7 +18,7 @@ export default async function MenuItem(){
             <Image src= "/curryChicken.jpeg" width={0} height={0} sizes="100vw" style={{ width: '100%', height: '100%' }} className={styles.menuImage}  alt = {item.id.toString()}></Image>
         </div>
         <div className = {styles.menuDesc}>
-            <h1 className = " text-5xl text-center ">{item.name}</h1>
+            <h1 className = " text-orange text-5xl text-center ">{item.name}</h1>
             <br></br>
             <h2 className = "text-center text-xl"></h2>
             <center>
@@ -38,7 +38,7 @@ export default async function MenuItem(){
 
         <div key={item.id} className = {styles.menuRow}>
             <div className = {styles.menuDesc}>
-                <h1 className = "text-black text-2xl text-center ">{item.name}</h1>
+                <h1 className = "text-orange text-5xl text-center ">{item.name}</h1>
                 <br></br>
                 <h2 className = "text-center text-md"></h2>
                 <hr className= {styles.descBar}></hr>
