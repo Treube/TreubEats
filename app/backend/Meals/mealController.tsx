@@ -3,20 +3,54 @@ import { NextRequest, NextResponse } from 'next/server';
 import * as MealService from './mealService' ;
 
 export const createMeal= async(req: NextRequest , res: NextResponse) => {
-    // ensure that body has a name and items
+    // ensure that body has a name and description and price
     // retrieve name and items from req
     const request_data = await req.formData();
     const name = request_data.get("name") as string;
+    const description = request_data.get("description") as string;
     const price = parseFloat(request_data.get("price") as string);
-  
 
     if (!name || !price ) {
-         console.log(name,price);
-         return NextResponse.error();
-      }
-      console.log("IN controller");
-    const newMenuItem = await MealService.createMeal(name, price)
+      console.log(name,price);
+      return NextResponse.error();
+    }
+    const newMenuItem = await MealService.createMeal(name, description, price)
     return newMenuItem;
-    // respond with the created review
-    
+    // respond with the created meal
+};
+
+export const editMeal= async(req: NextRequest , res: NextResponse) => {
+  // ensure that body has a name and description and price
+  // retrieve name and items from req
+  const request_data = await req.formData();
+  const name = request_data.get("name") as string;
+  const description = request_data.get("description") as string;
+  const price = parseFloat(request_data.get("price") as string);
+  const id = parseInt(request_data.get("id") as string);
+
+  if (!id && (!name || !price || !description )) {
+    console.log(id,name,description,price);
+    return NextResponse.error();
+  }
+  const editMeal = await MealService.editMeal(id, name, description, price)
+  return editMeal;
+  // respond with the created meal
+};
+
+export const deleteMeal= async(req: NextRequest , res: NextResponse) => {
+  // ensure that body has a name and description and price
+  // retrieve name and items from req
+  const request_data = await req.formData();
+  const name = request_data.get("name") as string;
+  const description = request_data.get("description") as string;
+  const price = parseFloat(request_data.get("price") as string);
+  const id = parseInt(request_data.get("id") as string);
+
+  if (!id && (!name || !price || !description )) {
+    console.log(id,name,description,price);
+    return NextResponse.error();
+  }
+  const deletedMeal = await MealService.editMeal(id, name, description, price)
+  return deletedMeal;
+  // respond with the created meal
 };
