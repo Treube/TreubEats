@@ -69,8 +69,10 @@
 @layer base {
   * {
     @apply border-border;
+    margin: 0;
+    padding: 0;
   }
-  body {
+  html, body {
     @apply bg-background text-foreground;
     background-color: orange;
 

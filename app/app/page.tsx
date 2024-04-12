@@ -6,6 +6,7 @@ import { SignInButton, SignUpButton } from "@clerk/nextjs";
 import { Button } from "@/components/ui/button";
 import prisma from "@/backend/Prisma";
 import MenuItem from "./components/MenuItem";
+import Navigation from "./components/NavBar";
 
 
 
@@ -14,6 +15,9 @@ export  default async function LandingPage() {
   const MenuSize = MenuItems.length 
   return (
     <div>
+      <div className = {styles.navBar}>
+          <Navigation />
+        </div>
     <div className = {styles.banner}>
       
       <Image src= "/TreubeLogo.png" width = {150} height = {150} className="logo" alt = "TreubeLogo"></Image>
@@ -43,10 +47,15 @@ export  default async function LandingPage() {
                             <source src={('/food.mp4')}/>
                         </video>
       </div>
+      
+
 
       <div id = "menu" className = {styles.menuSection}> 
-        <h1 className = 'text-white text-center text-8xl mt-10'>MENU</h1>
-        <MenuItem  />
+      <h1 className = 'text-white text-center text-8xl mt-5'>MENU</h1>
+          <div className = {styles.menuItems}>
+            
+            <MenuItem  />
+          </div>
       </div>
 
       </div>

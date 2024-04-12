@@ -1,36 +1,49 @@
 .menuRow{
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+
     width: 100%;
-    color: white;
+    
+
+    
     
 }
 .menuDesc{
     width: 50%;
     margin-top: 75px;
+    background-color: white;
+    color: orange;
+    
 }
 
 .descBar{
 
     border: 5;
     border-radius: 2px;
-    width: 100%;               
+    width: 75%;               
     background-color: white; 
     height: 4px;
+    margin: auto;
 
 }
 
 .descStyle{
-    margin-top:10px;
+    padding: 25px 50px 10px 100px;
+    font-size: 20px;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    
+
 }
 
 .descPrice{
     margin-top: 10px;
     text-align: center;
+    align-items: center;
+    
 }
 
 .menuImage{
     margin: auto;
     display: block;
+    background-color: white;
 }
