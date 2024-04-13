@@ -1,6 +1,6 @@
 import { log } from 'console';
 import { NextRequest, NextResponse } from 'next/server';
-import * as MealService from './orderItemService' ;
+import * as OrderService from './orderItemService' ;
 
 export const createOrderItem= async(req: NextRequest , res: NextResponse) => {
     // ensure that body has a name and items
@@ -16,9 +16,9 @@ export const createOrderItem= async(req: NextRequest , res: NextResponse) => {
          return NextResponse.error();
       }
       console.log("IN controller");
-    const newMenuItem = await MealService.createOrderItem(mealId, orderId, quantity);
+    const newOrderItem = await OrderService.createOrderItem(mealId, orderId, quantity);
     
-    return newMenuItem;
+    return newOrderItem;
     // respond with the created review
     
 };

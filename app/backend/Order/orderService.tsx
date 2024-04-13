@@ -21,6 +21,25 @@ export async function createOrder(userId: string): Promise<any>{
     return newOrder;
 };
 
+export async function getAllOrderItems(orderid: number): Promise<any>{
+    //have some requirements about user name and password 
+    /**
+     * ensure password is within some criteria
+     */
+    //Create the user using prisma client
+    const found_orders = await prisma.orderItem.findMany({
+        where:{
+            id: orderid,
+        }
+      }
+    );
+
+    if(!found_orders){
+        console.log("We cannot find the order!!!");
+        return NextResponse.error();
+    }
+    return found_orders;
+}
 
 export async function addOrderItem(orderid: number,item: OrderItem): Promise<any>{
     //have some requirements about user name and password 
@@ -40,7 +59,7 @@ export async function addOrderItem(orderid: number,item: OrderItem): Promise<any
         return NextResponse.error();
     }
     
-    found_order
+    
 
 
 };
