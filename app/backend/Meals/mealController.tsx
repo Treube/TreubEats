@@ -50,7 +50,7 @@ export const deleteMeal= async(req: NextRequest , res: NextResponse) => {
     console.log(id,name,description,price);
     return NextResponse.error();
   }
-  const deletedMeal = await MealService.editMeal(id, name, description, price)
+  const deletedMeal = await MealService.deleteMeal(reviewId, userId);
   return deletedMeal;
   // respond with the created meal
 };

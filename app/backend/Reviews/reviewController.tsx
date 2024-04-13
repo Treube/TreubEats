@@ -1,83 +1,85 @@
 import * as reviewService from './reviewService' ;
 import 'next';
-import { NextApiRequest, NextApiResponse } from 'next';
+import { NextRequest, NextResponse } from 'next/server';
 
-export const createReview = async(req: NextApiRequest , res: NextApiResponse) => {
-    // ensure that body has a rating and a description
-    // retrieve description and rating from req
-    const {userId, rating, description} = req.body
-
-    if (!userId || !rating || !description) {
-        return res.status(400).json({ message: 'There are missing entries are required' });
-      }
-
-    const newReview = await reviewService.createReview(userId, rating, description)
-
-    // respond with the created review
-    res.status(201).json(newReview);
-
-};
-
-export const updateReview = async(req: NextApiRequest , res: NextApiResponse) => {
+export const createReview = async(req: NextRequest , res: NextResponse) => {
   // ensure that body has a rating and a description
   // retrieve description and rating from req
-  const {userId, reviewId, rating, description} = req.body
+  const request_data = await req.formData();
+  const userId = parseInt(request_data.get("userId") as string);
+  const description = request_data.get("description") as string;
+  const rating = parseFloat(request_data.get("rating") as string);
 
-  if (!userId || !reviewId || !rating || !description) {
-      return res.status(400).json({ message: 'There are missing entries are required' });
-    }
-
-  const updatedReview = await reviewService.updateReview(userId, reviewId, rating, description)
-
-  // respond with the updated review
-  res.status(201).json(updatedReview);
-
-};
-
-export const deleteReview = async(req: NextApiRequest , res: NextApiResponse) => {
-  // ensure that body has a userid and reviewid
-  // retrieve description and rating from req
-  const {userId, reviewId} = req.body
-
-  if (!userId || !reviewId) {
-    return res.status(400).json({ message: 'There are missing entries are required' });
+  if (!userId || !rating || !description) {
+    console.log(userId,rating);
+    return NextResponse.error();
   }
 
-  const deletedReview = await reviewService.deleteReview(userId, reviewId)
+  const newReview = await reviewService.createReview(userId, rating, description)
+  return newReview;
+};
 
-  // respond with the deleted review
-  res.status(201).json(deletedReview);
+export const updateReview = async(req: NextRequest , res: NextResponse) => {
+  // ensure that body has a rating and a description
+  // retrieve description and rating from req
+  const request_data = await req.formData();
+  const userId = parseInt(request_data.get("userId") as string);
+  const reviewId = parseInt(request_data.get("reviewId") as string);
+  const description = request_data.get("description") as string;
+  const rating = parseFloat(request_data.get("rating") as string);
 
+  if (!userId && !reviewId && (!rating || !description)) {
+    console.log(userId,rating);
+    return NextResponse.error();
+  }
+
+  const updatedReview = await reviewService.updateReview(userId, reviewId, rating, description);
+  return updatedReview;
+};
+
+export const deleteReview = async(req: NextRequest , res: NextResponse) => {
+  // ensure that body has a rating and a description
+  // retrieve description and rating from req
+  const request_data = await req.formData();
+  const userId = parseInt(request_data.get("userId") as string);
+  const reviewId = parseInt(request_data.get("reviewId") as string);
+
+  if (!userId && !reviewId) {
+    console.log(userId,reviewId);
+    return NextResponse.error();
+  }
+
+  const deletedReview = await reviewService.deleteReview(userId, reviewId);
+  return deletedReview;
 };
 
 export const likeReview = async(req: NextApiRequest , res: NextApiResponse) => {
   // ensure that body has a userid and reviewid
   // retrieve description and rating from req
-  const {userId, reviewId} = req.body
+  const request_data = await req.formData();
+  const userId = parseInt(request_data.get("userId") as string);
+  const reviewId = parseInt(request_data.get("reviewId") as string);
 
-  if (!userId || !reviewId) {
-    return res.status(400).json({ message: 'There are missing entries are required' });
+  if (!userId && !reviewId) {
+    console.log(userId,reviewId);
+    return NextResponse.error();
   }
-
-  const likeReview = await reviewService.likeReview(userId, reviewId)
-
-  // respond with the updated review
-  res.status(201).json(likeReview);
-
+  likeReview = await reviewService.likeReview(userId, reviewId);
+  return likeReview;
 };
 
 export const dislikeReview = async(req: NextApiRequest , res: NextApiResponse) => {
   // ensure that body has a userid and reviewid
   // retrieve description and rating from req
-  const {userId, reviewId} = req.body
+  const request_data = await req.formData();
+  const userId = parseInt(request_data.get("userId") as string);
+  const reviewId = parseInt(request_data.get("reviewId") as string);
 
-  if (!userId || !reviewId) {
-    return res.status(400).json({ message: 'There are missing entries are required' });
+  if (!userId && !reviewId) {
+    console.log(userId,reviewId);
+    return NextResponse.error();
   }
-
-  const dislikeReview = await reviewService.dislikeReview(userId, reviewId)
-
-  // respond with the updated review
-  res.status(201).json(dislikeReview);
+  dislikeReview = await reviewService.dislikeReview(userId, reviewId);
+  return dislikeReview;
 
 };
