@@ -13,41 +13,36 @@ model User {
   email    String   @unique
   name     String?
   username String?
-  Order    Order[]
   Review   Review[]
 }
 
 model MenuSection {
-  id       Int        @id @default(autoincrement())
-  name     String
-  MenuItem MenuItem[]
+  id   Int    @id @default(autoincrement())
+  name String
 }
 
-model MenuItem {
+model Meal {
   id          Int         @id @default(autoincrement())
   name        String
   description String?
   price       Float
-  sectionId   Int
-  section     MenuSection @relation(fields: [sectionId], references: [id])
   OrderItem   OrderItem[]
 }
 
 model Order {
   id        Int         @id @default(autoincrement())
   createdAt DateTime    @default(now())
-  userId    Int
-  user      User        @relation(fields: [userId], references: [id])
+  userId    String
   items     OrderItem[]
 }
 
 model OrderItem {
-  id         Int      @id @default(autoincrement())
-  quantity   Int
-  menuItemId Int
-  orderId    Int
-  order      Order    @relation(fields: [orderId], references: [id])
-  menuItem   MenuItem @relation(fields: [menuItemId], references: [id])
+  id       Int   @id @default(autoincrement())
+  quantity Int
+  mealId   Int
+  orderId  Int
+  meal     Meal  @relation(fields: [mealId], references: [id])
+  order    Order @relation(fields: [orderId], references: [id])
 }
 
 model Review {

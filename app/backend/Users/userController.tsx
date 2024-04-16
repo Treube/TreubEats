@@ -29,3 +29,9 @@ export const createUser = async(req: NextRequest , res: NextResponse) => {
     return newUser;
 
 };
+
+
+
+
+
+
