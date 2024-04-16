@@ -20,7 +20,7 @@ export async function GET(
             return NextResponse.json({message: "we are here getting all meals!"});
         }
 
-       
+       console.log("data is not null")
         return NextResponse.json({messages: data});
 }
 
