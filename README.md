@@ -16,29 +16,12 @@ Treubeats app will also provide a means for the business to keep records of all 
 - Database: Prisma
 - Design Tool: Figma
 
-
-## Installation and Setup
-
-[Instructions for setting up the project locally, including system requirements, dependencies, and environment variables]
-
-## Usage and Deployment
-
-[Instructions for running the app locally for development and testing purposes]
-[Instructions for deploying the app to a production environment, if applicable]
-
 ## Contributing Guidelines
-
-[Coding conventions, style guides, and best practices for contributors]
-[Instructions for submitting bug reports, feature requests, or pull requests]
 We did a lot of research on the frameworks we were using such as Next.Js and Prisma.
 
 ## License
 
 [License information for the project]
-
-## Credits
-
-[Third-party libraries, resources, or assets used in the project that need to be acknowledged]
 
 ## Contact
 
