@@ -53,7 +53,7 @@ export const deleteReview = async(req: NextRequest , res: NextResponse) => {
   return deletedReview;
 };
 
-export const likeReview = async(req: NextApiRequest , res: NextApiResponse) => {
+export const likeReview = async(req: NextRequest , res: NextResponse) => {
   // ensure that body has a userid and reviewid
   // retrieve description and rating from req
   const request_data = await req.formData();
@@ -64,11 +64,11 @@ export const likeReview = async(req: NextApiRequest , res: NextApiResponse) => {
     console.log(userId,reviewId);
     return NextResponse.error();
   }
-  likeReview = await reviewService.likeReview(userId, reviewId);
+  const likeReview = await reviewService.likeReview(userId, reviewId);
   return likeReview;
 };
 
-export const dislikeReview = async(req: NextApiRequest , res: NextApiResponse) => {
+export const dislikeReview = async(req: NextRequest , res: NextResponse) => {
   // ensure that body has a userid and reviewid
   // retrieve description and rating from req
   const request_data = await req.formData();
@@ -79,7 +79,7 @@ export const dislikeReview = async(req: NextApiRequest , res: NextApiResponse) =
     console.log(userId,reviewId);
     return NextResponse.error();
   }
-  dislikeReview = await reviewService.dislikeReview(userId, reviewId);
+  const dislikeReview = await reviewService.dislikeReview(userId, reviewId);
   return dislikeReview;
 
 };
