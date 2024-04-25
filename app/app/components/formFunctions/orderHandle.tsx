@@ -11,13 +11,16 @@ import Link from "next/link"
 import { useRouter } from 'next/navigation';
 import {useState, useEffect} from 'react';
 import styles from '../dashboard/dashboard.module.css';
+import { PrismaClient } from '@prisma/client';
+
+const prisma = new PrismaClient(); 
 
 const formSchema = z.object({
     meal: z.string(),
     amount: z.coerce.number()
   });
 
-function handleOrder(formData: z.infer<typeof formSchema>){
+async function handleOrder(formData: z.infer<typeof formSchema>){
     const orderData = {
         meal: formData.meal as string,
         amount: formData.amount as number,
@@ -25,13 +28,11 @@ function handleOrder(formData: z.infer<typeof formSchema>){
     
     
     
-      const incomeU = await prisma.income.create({
-        data: {
-            userId: user,
-            source: IncomeData.source,
-            freq: IncomeData.freq,
-            amount: IncomeData.amount
-        },
+    //   const incomeU = await prisma.orderItem.create({
+    //     data: {
+    //         quantity: orderData.amount
+    //     },
+       
        
         
       });
