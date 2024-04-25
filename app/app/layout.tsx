@@ -51,7 +51,7 @@ export default function RootLayout({
           <a href = "#menu">Menu</a>
           <a href = "/order">Order</a>
           <a href = "/about">About</a>
-          <a href = "/">Review</a>
+          <a href = "/review">Review</a>
 
         </div>
       </div>
