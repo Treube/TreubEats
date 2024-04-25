@@ -11,11 +11,10 @@ import Navigation from "./components/NavBar";
 
 
 export  default async function LandingPage() {
-  const MenuItems = await prisma.menuItem.findMany();
-  const MenuSize = MenuItems.length 
+
   return (
     <div>
-      <div className = {styles.navBar}>
+      {/* <div className = {styles.navBar}>
           <Navigation />
         </div>
     <div className = {styles.banner}>
@@ -40,7 +39,7 @@ export  default async function LandingPage() {
           <a href = "/">Review</a>
 
         </div>
-      </div>
+      </div> */}
 
       <div className = {styles.cookingVid}>
       <video loop autoPlay muted width = '100%'>
@@ -53,7 +52,6 @@ export  default async function LandingPage() {
       <div id = "menu" className = {styles.menuSection}> 
       <h1 className = 'text-white text-center text-8xl mt-5'>MENU</h1>
           <div className = {styles.menuItems}>
-            
             <MenuItem  />
           </div>
       </div>

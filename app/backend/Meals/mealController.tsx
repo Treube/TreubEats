@@ -26,7 +26,9 @@ export const getAllMeals= async(req: NextRequest , res: NextResponse) => {
   // retrieve name and items from req
   //const request_data = await req.formData();
   console.log("IN controller");
-  const allMeals= await MealService.getAllMeals()
+  const allMeals= await MealService.getAllMeals();
+  console.log("allMeals:",allMeals )
+
   return allMeals;
   // respond with the created review
   

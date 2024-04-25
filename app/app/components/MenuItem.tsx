@@ -6,7 +6,7 @@ import Navigation from "./NavBar";
 
 
 export default async function MenuItem(){
-    const items = await prisma.menuItem.findMany();
+    const items = await prisma.meal.findMany(); 
     return (
         
         <div>
