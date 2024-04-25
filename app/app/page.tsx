@@ -4,10 +4,19 @@ import styles from "./LandingPage.module.css";
 import {LoginButton} from "./components/LogIn";
 import { SignInButton, SignUpButton } from "@clerk/nextjs";
 import { Button } from "@/components/ui/button";
+import prisma from "@/backend/Prisma";
+import MenuItem from "./components/MenuItem";
+import Navigation from "./components/NavBar";
 
-export default function LandingPage() {
+
+
+export  default async function LandingPage() {
+
   return (
     <div>
+      {/* <div className = {styles.navBar}>
+          <Navigation />
+        </div>
     <div className = {styles.banner}>
       
       <Image src= "/TreubeLogo.png" width = {150} height = {150} className="logo" alt = "TreubeLogo"></Image>
@@ -24,17 +33,29 @@ export default function LandingPage() {
       <hr className = {styles.bannerBar}></hr>
         <div className = {styles.menuLinks}>
           
-          <a href = "/">Menu</a>
+          <a href = "#menu">Menu</a>
           <a href = "/">Order</a>
           <a href = "/">About</a>
           <a href = "/">Review</a>
 
         </div>
-      </div>
+      </div> */}
 
       <div className = {styles.cookingVid}>
-      <Image src= "/stir_fry_food.webp" width={0} height={0} sizes="100vw" style={{ width: '100%', height: '100%' }} alt = "CookingVid"></Image>
+      <video loop autoPlay muted width = '100%'>
+                            <source src={('/food.mp4')}/>
+                        </video>
       </div>
+      
+
+
+      <div id = "menu" className = {styles.menuSection}> 
+      <h1 className = 'text-white text-center text-8xl mt-5'>MENU</h1>
+          <div className = {styles.menuItems}>
+            <MenuItem  />
+          </div>
+      </div>
+
       </div>
 
   );

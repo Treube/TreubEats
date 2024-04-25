@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "@hookform/resolvers": "^3.3.4",
+    "install": "^0.13.0",
+    "npm": "^10.5.2",
+    "zod": "^3.23.4"
+  }
+}

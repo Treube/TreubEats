@@ -1,3 +1,4 @@
+import { NextResponse } from 'next/server';
 import prisma from '../Prisma'
 import * as userService from './mealService' ;
 
@@ -21,3 +22,14 @@ export async function createMeal( name: string, price: number): Promise<any>{
     return newMeal;
 };
 
+export async function getAllMeals(){
+
+     const Allmeals = await prisma.meal.findMany();
+     if(!Allmeals){
+        console.log("Cannot find any meals")
+        return  NextResponse.error();
+     }
+     
+     return Allmeals;
+
+}

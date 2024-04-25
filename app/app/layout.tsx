@@ -2,6 +2,17 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { ClerkProvider } from '@clerk/nextjs'
+import {NextUIProvider} from "@nextui-org/react";
+import Image from "next/image";
+import ProductCard from "./components/ProductCard";
+import styles from "./LandingPage.module.css";
+import {LoginButton} from "./components/LogIn";
+import { SignInButton, SignUpButton } from "@clerk/nextjs";
+import { Button } from "@/components/ui/button";
+import prisma from "@/backend/Prisma";
+import MenuItem from "./components/MenuItem";
+import Navigation from "./components/NavBar";
+
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -18,7 +29,34 @@ export default function RootLayout({
   return (
     <ClerkProvider>
       <html lang="en">
-        <body className = {inter.className}>{children}</body>
+        <body className = {inter.className}>
+        <div className = {styles.navBar}>
+          <Navigation />
+        </div>
+        <div className = {styles.banner}>
+      
+      <Image src= "/TreubeLogo.png" width = {150} height = {150} className="logo" alt = "TreubeLogo"></Image>
+      <div className = {styles.logo}>
+        <SignInButton>
+          <Button >Login</Button>
+        </SignInButton>
+
+        <SignUpButton>
+          <Button >Sign Up</Button>
+        </SignUpButton>
+      </div>
+      <hr className = {styles.bannerBar}></hr>
+        <div className = {styles.menuLinks}>
+          
+          <a href = "#menu">Menu</a>
+          <a href = "/order">Order</a>
+          <a href = "/about">About</a>
+          <a href = "/review">Review</a>
+
+        </div>
+      </div>
+          {children}
+        </body>
       </html>
     </ClerkProvider>
   );
